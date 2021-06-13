@@ -45,8 +45,8 @@ def D(p, amount_of_tests):
     return success
 
 
-def P(p, amount_of_tests):
-    L = math.exp(-p*amount_of_tests)
+def P(lambd):
+    L = math.exp(-lambd)
     k = 0
     p = 1
     while p > L:
@@ -55,10 +55,10 @@ def P(p, amount_of_tests):
     return k
 
 
-def W(lambd, amount):
+def W(amount):
     tab = J(0, 1, amount)
     for x in range(amount):
-        tab[x] = -math.log10(tab[x])/lambd
+        tab[x] = -math.log10(tab[x])
     return tab
 
 
