@@ -8,6 +8,7 @@ m = 244944
 
 seed = 123
 
+
 def G(counter):
     global seed
     tab = [seed]
