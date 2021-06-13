@@ -2,44 +2,32 @@ import generators as gen
 import tests
 import histograms
 
-# from scipy.stats import chisquare
-# from statsmodels.sandbox.stats.runs import runstest_1samp
+"""Linear congruential generator"""
+# print(gen.G(100))
+histograms.G(200000)
 
-# histograms.J(0,1,1000000)
-# histograms.P(1000)
-histograms.D(0.5,10000)
-# for i in range(10000):
-#     print(gen.P(1000))
-# print(gen.P(0.5,1000))
-# print(gen.P(0.5,1000))
-# print(gen.P(0.5,1000))
-# print(gen.P(0.5,1000))
-# print(gen.P(0.5,1000))
-# print(gen.P(0.5,1000))
+"""Generator J for the range from 0 to 1, but we can choose [a,b] interval"""
+# print(gen.J(0, 1, 100))
+# print(gen.J(4, 13, 100))
+histograms.J(0, 1, 200000)
 
-# print(gen.W(0.5,10000))
-# histograms.J(0,1,10000)
-# print(gen.B(0.5,10000))
+"""Coin Toss Distribution. We receive only 0 and 1 with p chance."""
+# print(gen.B(0.5, 100))
+# print(gen.B(0.2, 100))
+histograms.B(0.5, 10000)
+histograms.B(0.2, 10000)
 
-#   Linear congruential generator
-# for i in range(counter):
-#     seed = G(seed)
-#     print(seed)
+"""Binomial Distribution"""
+histograms.D(0.5, 10000)
 
+"""Poisson Distribution"""
+histograms.P(1000)
 
-#   Generator J for the range from 0 to 1, but we can choose [a,b] interval
-# for i in range(counter):
-#     seed = G(seed)
-#     print(J(0,1))
+"""Exponential Distribution"""
+histograms.W(10000)
 
+"""Normal Distribution"""
+histograms.N(1000)
 
-#   Coin Toss Distribution. We receive only 0 and 1 with 50% chance.
-# for i in range(counter):
-#     seed = G(seed)
-#     print(B(seed))
-
-
-#   Binomial Distribution
-# attempts = 20
-# asd = D(attempts, seed)
-# print(asd)
+"""Run Test"""
+tests.runs_test(1000)

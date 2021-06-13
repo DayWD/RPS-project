@@ -1,20 +1,19 @@
 import math
 
-# DON'T TOUCH~~~~~~~~~
+"""~~~~~~DON'T TOUCH~~~~~~"""
 multiplier = 1597
 c = 51749
 m = 244944
-# ~~~~~~~~~~~~~~~~~~~~
+"""~~~~~~~~~~~~~~~~~~~~~~~"""
 
-seed = 1
-
+seed = 123
 
 def G(counter):
     global seed
     tab = [seed]
     for i in range(0, counter):
         tab.append((multiplier * tab[i] + c) % m)
-    seed = tab[len(tab)-1]
+    seed = tab[len(tab) - 1]
     tab.pop(0)
     return tab
 
@@ -66,5 +65,5 @@ def N(amount):
     tab_1 = J(0, 1, amount)
     tab_2 = J(0, 1, amount)
     for x in range(amount):
-        tab_1[x] = math.sqrt(-2*math.log10(tab_1[x]))*math.cos(2*math.pi*tab_2[x])
+        tab_1[x] = math.sqrt(-2 * math.log10(tab_1[x])) * math.cos(2 * math.pi * tab_2[x])
     return tab_1

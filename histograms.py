@@ -13,8 +13,8 @@ def G(counter):
 
 
 def J(a, b, amount):
-    tab = generators.J(a,b,amount)
-    amount = int(amount/100)
+    tab = generators.J(a, b, amount)
+    amount = int(amount / 100)
     plt.hist(tab, bins=amount)
     plt.title('Histogram of J generator')
     plt.xlabel('Generated number')
@@ -34,7 +34,7 @@ def B(p, amount):
 def D(p, amount_of_tests):
     tab = []
     for i in range(amount_of_tests):
-        tab.append(generators.D(p,10))
+        tab.append(generators.D(p, 10))
     amount = int(amount_of_tests / 1100)
     plt.hist(tab, bins=amount)
     plt.title(f'Histogram of D generator')
@@ -47,7 +47,7 @@ def P(amount_of_tests):
     tab = []
     for i in range(amount_of_tests):
         tab.append(generators.P(4))
-    amount = int(amount_of_tests / 50)
+    amount = int(amount_of_tests / 80)
     plt.hist(tab, bins=amount)
     plt.title(f'Histogram of P generator')
     plt.xlabel('Generated number')
