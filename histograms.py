@@ -65,8 +65,8 @@ def W(amount):
     plt.show()
 
 
-def N(amount):
-    tab = generators.N(amount)
+def N(amount, q, u):
+    tab = generators.N(amount, q, u)
     amount = int(amount / 100)
     plt.hist(tab, bins=amount)
     plt.title(f'Histogram of N generator')

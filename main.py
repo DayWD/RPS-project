@@ -27,7 +27,8 @@ histograms.P(1000)
 histograms.W(10000)
 
 """Normal Distribution"""
-histograms.N(1000)
+histograms.N(1000, 1, 0)
+histograms.N(1000, 5, 100)
 
 """Run Test"""
 tests.runs_test(1000)

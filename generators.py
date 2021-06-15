@@ -22,7 +22,7 @@ def G(counter):
 def J(a, b, amount):
     tab = G(amount)
     for x in range(len(tab)):
-        tab[x] = (tab[x] / m) * (b - a) + a
+        tab[x] = ((tab[x] + 1) / (m + 1)) * (b - a) + a
     return tab
 
 
@@ -58,13 +58,14 @@ def P(lambd):
 def W(amount):
     tab = J(0, 1, amount)
     for x in range(amount):
-        tab[x] = -math.log10(tab[x])
+        tab[x] = -math.log(tab[x])
     return tab
 
 
-def N(amount):
+def N(amount, q, u):
     tab_1 = J(0, 1, amount)
     tab_2 = J(0, 1, amount)
     for x in range(amount):
-        tab_1[x] = math.sqrt(-2 * math.log10(tab_1[x])) * math.cos(2 * math.pi * tab_2[x])
+        tab_1[x] = math.sqrt(-2 * math.log(tab_1[x])) * math.cos(2 * math.pi * tab_2[x])
+        tab_1[x] = tab_1[x] * q + u
     return tab_1
